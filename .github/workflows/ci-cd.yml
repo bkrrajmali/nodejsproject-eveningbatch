@@ -83,7 +83,7 @@ jobs:
            aws-region: ${{ env.AWS_REGION }}
       - name: Login To AWS working-directory
         run: |
-          aws ecr get-login-password --region $AWS_REGION
+          aws ecr get-login-password --region $AWS_REGION | \
           docker login --username AWS --password-stdin $ECR_REGISTRY
       - name: Tag and Push the Image to ECR
         run: |
