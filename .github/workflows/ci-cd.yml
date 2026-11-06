@@ -30,6 +30,8 @@ jobs:
         run: npm run validate
       - name: Test
         run: npm test
+      - name: Build
+        run: npm run build
 
       - name: Package
         run: npm run package
