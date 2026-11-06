@@ -18,7 +18,7 @@ spec:
       - name: devops-node-app
         image: 175157388210.dkr.ecr.ap-south-1.amazonaws.com/devops-node-app:latest
         ports:
-          - containerPort: 80
+          - containerPort: 3000
 
 ---
 
@@ -27,9 +27,9 @@ kind: Service
 metadata:
   name: devops-node-app
 spec:
-  type: LoadBalanser
+  type: LoadBalancer
   selector:
     app: devops-node-app
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 3000
